@@ -8,15 +8,15 @@
 void main()
 {  
    unsigned int8 data = 0xFF;                    //Veri
-   int1 ret;                                     //ACK sorgulama için deðiþken
+   int1 ret;                                     //ACK sorgulama iÃ§in deÄŸiÅŸken
    
-   output_bit(SS1_A0, 1);                        //DAC A0 pini adres ayarý
+   output_bit(SS1_A0, 1);                        //DAC A0 pini adres ayarÄ±
    output_bit(SS2_A0, 0);
    
-   output_high(SDA);                             //Baþlangýçta SDA ve SCL çýkýþlarýný HIGH duruma getir
+   output_high(SDA);                             //BaÅŸlangÄ±Ã§ta SDA ve SCL Ã§Ä±kÄ±ÅŸlarÄ±nÄ± HIGH duruma getir
    output_high(SCL);
    
-   i2c_start();                                      //Baþlangýç bitini yolla
+   i2c_start();                                      //BaÅŸlangÄ±Ã§ bitini yolla
    
    ret = i2c_write(dac_address);                     //Adresi yolla
    if (!ret) stop();                             //ACK bitini sorgula
